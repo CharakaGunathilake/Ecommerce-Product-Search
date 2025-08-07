@@ -1,0 +1,22 @@
+spring.application.name=Auth_System
+spring.profiles.active=
+# logging DEBUG, INFO, ERROR, WARN, TRACE, OFF
+logging.level.org.springframework=INFO
+logging.level.dev.famous=INFO
+# environment
+app.env=dev
+app.domain=localhost
+# Database Configuration
+spring.datasource.url=jdbc:{{driverType}}://localhost:{{port}}/{{database}}
+spring.datasource.username=
+spring.datasource.password=
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.hikari.minimum-idle=5
+spring.datasource.hikari.maximum-pool-size=20
+spring.datasource.hikari.idle-timeout=30000
+spring.datasource.hikari.pool-name=MyHikariPool
+# JPA Settings
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+# Server Configuration
+server.port=8080
