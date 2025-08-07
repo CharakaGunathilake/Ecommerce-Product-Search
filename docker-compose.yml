@@ -1,0 +1,51 @@
+services:
+  app:
+    build: .
+    container_name: ecommerce-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - solr
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/ecommerce_db
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      SOLR_HOST: http://solr:8983/solr
+    networks:
+      - ecommerce-network
+
+  postgres:
+    image: postgres:16
+    container_name: ecommerce-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ecommerce_db
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ecommerce-network
+
+  solr:
+    image: solr:8.11.2
+    container_name: ecommerce-solr
+    ports:
+      - "8983:8983"
+    command:
+      - solr-precreate
+      - products
+    volumes:
+      - solr_data:/var/solr
+    networks:
+      - ecommerce-network
+
+volumes:
+  postgres_data:
+  solr_data:
+
+networks:
+  ecommerce-network:
