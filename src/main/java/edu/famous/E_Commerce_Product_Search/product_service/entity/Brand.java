@@ -33,4 +33,6 @@ public class Brand extends PersistedObject {
     private String contactPhone;
     @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Product> products;
+    @Column(nullable = false, unique = true)
+    private String brandCode;
 }

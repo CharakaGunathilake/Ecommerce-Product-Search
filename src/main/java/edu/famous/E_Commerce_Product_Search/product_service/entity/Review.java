@@ -7,8 +7,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.sql.Blob;
-
 @Data
 @Entity
 @Table(name = "reviews")
@@ -20,7 +18,8 @@ public class Review extends PersistedObject {
     private String content;
     @Column(nullable = false)
     private Integer rating;
-    @OneToOne(mappedBy = "review", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product productId;
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "user_id", nullable = false)

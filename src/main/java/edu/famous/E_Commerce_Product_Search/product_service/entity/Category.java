@@ -21,6 +21,8 @@ public class Category extends PersistedObject {
     @Lob
     @Column(nullable = false)
     private String description;
+    @Column(nullable = false, unique = true)
+    private String categoryCode;
     //    @ManyToOne
 //    @JoinColumn(name = "parent_id")
 //    private CategoryEntity parentCategory;

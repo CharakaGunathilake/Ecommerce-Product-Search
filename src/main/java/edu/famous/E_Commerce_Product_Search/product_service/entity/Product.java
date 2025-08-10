@@ -10,6 +10,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @Entity
@@ -31,20 +32,19 @@ public class Product extends PersistedObject {
     @Enumerated(EnumType.STRING)
     private ProductStatus status;
     private String imageUrl;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String productCode;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
-    private Long category;
+    private Category category;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "brand_id", nullable = false)
-    private Long brand;
-    @OneToOne
-    @JoinColumn(name = "review_id")
-    private Long review;
+    private Brand brand;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> review;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "discount_id")
-    private Long discount;
+    private Discount discount;
     private Boolean bestSelling;
     private Boolean recommended;
     private Boolean newArrival;
