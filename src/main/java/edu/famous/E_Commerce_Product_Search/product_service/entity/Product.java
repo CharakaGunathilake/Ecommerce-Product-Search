@@ -4,16 +4,14 @@ import edu.famous.E_Commerce_Product_Search.utils_common.PersistedObject;
 import edu.famous.E_Commerce_Product_Search.product_service.enums.ProductGrade;
 import edu.famous.E_Commerce_Product_Search.product_service.enums.ProductStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 @Data
 @Entity
+@Builder
 @Table(name = "product")
 @AllArgsConstructor
 @NoArgsConstructor

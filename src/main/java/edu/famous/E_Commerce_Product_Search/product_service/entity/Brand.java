@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.sql.Blob;
 import java.util.List;
 
 @Data
@@ -29,7 +28,7 @@ public class Brand extends PersistedObject {
     private String countryOfOrigin;
     @Column(name = "contact_email", nullable = false, length = 100)
     private String contactEmail;
-    @Column(name = "contact_phone", length = 20)
+    @Column(name = "contact_phone", length = 30)
     private String contactPhone;
     @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Product> products;
