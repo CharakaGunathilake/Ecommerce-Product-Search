@@ -55,7 +55,7 @@ public class DataSeedRunner implements CommandLineRunner {
 
             //Generate products (depends on brands, categories, and discounts)
             log.info("Generating products...");
-            List<ProductCsvDto> products = productFakerService.generateProducts(10000);
+            List<ProductCsvDto> products = productFakerService.generateProducts(50000);
             csvWriter.writeCsv(baseOutputPath + "products.csv", products, ProductCsvDto.class);
             log.info("Products data seeded successfully. Generated {} products.", products.size());
             dataPersistentRunner.persistCsvToRepository(categories, brands, discounts, products);
