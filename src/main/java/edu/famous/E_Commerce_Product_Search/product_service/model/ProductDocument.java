@@ -2,11 +2,13 @@ package edu.famous.E_Commerce_Product_Search.product_service.model;
 
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.solr.core.mapping.SolrDocument;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @SolrDocument(collection = "products")

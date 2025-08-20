@@ -31,7 +31,7 @@ public class DataSeedRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        String baseOutputPath = "src/main/resources/data/";
+        final String baseOutputPath = "src/main/resources/data/";
         log.info("Starting data seeding...");
 
         try {

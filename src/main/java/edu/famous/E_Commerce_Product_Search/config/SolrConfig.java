@@ -23,10 +23,10 @@ public class SolrConfig {
 
     // Additional Solr configuration beans can be added here if needed
     // For example, you can define a SolrTemplate bean if you need to use it
-     @Bean
-     public SolrTemplate solrTemplate(SolrClient solrClient) {
-         return new SolrTemplate(solrClient);
-     }
+    @Bean
+    public SolrTemplate solrTemplate(SolrClient solrClient) {
+        return new SolrTemplate(solrClient);
+    }
     // You can also define a SolrRepositoryFactoryBean if you need to create repositories
     // @Bean
     // public SolrRepositoryFactoryBean solrRepositoryFactoryBean(SolrClient solrClient) {
