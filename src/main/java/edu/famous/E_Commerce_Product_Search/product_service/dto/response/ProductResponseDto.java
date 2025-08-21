@@ -22,10 +22,10 @@ public class ProductResponseDto {
     private ProductStatus status;
     private String imageUrl;
     private String productCode;
-    private Long categoryId;
-    private Long brandId;
-    private Long reviewId;
-    private Long discountId;
+    private CategoryResponseDto category;
+    private BrandResponseDto brand;
+    private ReviewResponseDto reviewId;
+    private DiscountResponseDto discountId;
     private Boolean bestSelling;
     private Boolean recommended;
     private Boolean newArrival;

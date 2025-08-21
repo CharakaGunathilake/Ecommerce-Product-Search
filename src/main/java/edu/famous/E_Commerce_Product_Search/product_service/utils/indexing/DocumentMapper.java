@@ -1,10 +1,10 @@
-package edu.famous.E_Commerce_Product_Search.product_service.utils.search_utils;
+package edu.famous.E_Commerce_Product_Search.product_service.utils.indexing;
 
 import edu.famous.E_Commerce_Product_Search.product_service.entity.Product;
 import edu.famous.E_Commerce_Product_Search.product_service.model.ProductDocument;
 
-public class IndexingUtils {
-    private IndexingUtils() {
+public class DocumentMapper {
+    private DocumentMapper() {
         // Private constructor to prevent instantiation
     }
 
@@ -23,8 +23,6 @@ public class IndexingUtils {
                 .category(product.getCategory().getName())
                 .brand(product.getBrand().getName())
                 .price(product.getPrice().doubleValue())
-                .quantity(product.getQuantity())
-                .imageUrl(product.getImageUrl())
                 .bestSelling(product.getBestSelling())
                 .recommended(product.getRecommended())
                 .newArrival(product.getNewArrival())

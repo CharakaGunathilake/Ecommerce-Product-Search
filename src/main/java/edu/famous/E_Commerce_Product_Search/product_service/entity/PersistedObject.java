@@ -1,4 +1,4 @@
-package edu.famous.E_Commerce_Product_Search.utils_common;
+package edu.famous.E_Commerce_Product_Search.product_service.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;

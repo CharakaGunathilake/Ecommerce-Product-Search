@@ -1,6 +1,6 @@
 package edu.famous.E_Commerce_Product_Search.product_service.entity;
 
-import edu.famous.E_Commerce_Product_Search.utils_common.PersistedObject;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +19,7 @@ public class Category extends PersistedObject {
     @Column(nullable = false, length = 100)
     private String name;
     @Lob
+    @Basic(fetch = FetchType.EAGER)
     @Column(nullable = false)
     private String description;
     @Column(nullable = false, unique = true)
@@ -29,6 +30,7 @@ public class Category extends PersistedObject {
 //
 //    @OneToMany(mappedBy = "parentCategory")
 //    private List<CategoryEntity> subCategories;
+    @JsonIgnore
     @Column(nullable = false)
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Product> products;

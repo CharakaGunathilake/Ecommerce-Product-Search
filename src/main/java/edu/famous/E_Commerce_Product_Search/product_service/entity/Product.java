@@ -1,6 +1,5 @@
 package edu.famous.E_Commerce_Product_Search.product_service.entity;
 
-import edu.famous.E_Commerce_Product_Search.utils_common.PersistedObject;
 import edu.famous.E_Commerce_Product_Search.product_service.enums.ProductGrade;
 import edu.famous.E_Commerce_Product_Search.product_service.enums.ProductStatus;
 import jakarta.persistence.*;
@@ -20,6 +19,7 @@ public class Product extends PersistedObject {
     @Column(nullable = false, length = 100)
     private String name;
     @Lob
+    @Basic(fetch = FetchType.EAGER)
     @Column(nullable = false)
     private String description;
     @Column(nullable = false)

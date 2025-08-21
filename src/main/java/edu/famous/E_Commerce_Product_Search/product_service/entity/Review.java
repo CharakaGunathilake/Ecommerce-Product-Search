@@ -1,6 +1,5 @@
 package edu.famous.E_Commerce_Product_Search.product_service.entity;
 
-import edu.famous.E_Commerce_Product_Search.utils_common.PersistedObject;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,6 +14,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 public class Review extends PersistedObject {
     @Lob
+    @Basic(fetch = FetchType.EAGER)
     private String content;
     @Column(nullable = false)
     private Integer rating;

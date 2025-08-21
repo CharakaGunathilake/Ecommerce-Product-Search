@@ -5,45 +5,38 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.solr.core.mapping.SolrDocument;
+import org.apache.solr.client.solrj.beans.Field;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-@SolrDocument(collection = "products")
+@AllArgsConstructor
 public class ProductDocument {
-    //@Field
+    @Field
     @Id
     private String id;
 
-    //@Field
+    @Field
     private String name;
 
-    //@Field
+    @Field
     private String description;
 
-    //@Field
+    @Field
     private String category;
 
-    //@Field
+    @Field
     private String brand;
 
-    //@Field
+    @Field
     private Double price;
 
-    //@Field
-    private Integer quantity;
-
-    //@Field
-    private String imageUrl;
-
-    //@Field
+    @Field
     private Boolean bestSelling;
 
-    //@Field
+    @Field
     private Boolean recommended;
 
-    //@Field
+    @Field
     private Boolean newArrival;
 }
