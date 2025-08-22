@@ -39,4 +39,10 @@ public class ProductDocument {
 
     @Field
     private Boolean newArrival;
+
+    @Field
+    private String status;
+
+    @Field
+    private String grade;
 }

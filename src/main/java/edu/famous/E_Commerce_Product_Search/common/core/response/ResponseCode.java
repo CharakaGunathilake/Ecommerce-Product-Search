@@ -1,7 +1,9 @@
 package edu.famous.E_Commerce_Product_Search.common.core.response;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@Getter
 @AllArgsConstructor
 public enum ResponseCode {
     SUCCESS(200, "Success"),
@@ -13,12 +15,4 @@ public enum ResponseCode {
 
     private final int code;
     private final String message;
-
-    public int getCode() {
-        return code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
 }

@@ -27,25 +27,16 @@ public class ProductRequestDto {
     @NotNull(message = "Product quantity cannot be null")
     private Integer quantity;
 
-    @NotNull(message = "Product status cannot be null")
-    private ProductStatus status;
-
     private String imageUrl;
-
-    @NotNull(message = "Product code cannot be null")
-    private String productCode;
 
     @NotNull(message = "Product category cannot be null")
     private Long category;  // category id
 
-    @NotNull(message = "Product brand cannot be null")
     private Long brand;     // brand id
 
     private Long discount;  // discount id, optional
 
     private Boolean recommended;
-
-    private Boolean newArrival;
 
     @NotNull(message = "Product grade cannot be null")
     private ProductGrade grade;

@@ -54,6 +54,5 @@ public class ProductIndexServiceImpl implements ProductIndexService {
                 throw new RuntimeException("Failed to commit batch of products", e);
             }
         }
-        log.info("All products indexed successfully");
     }
 }
